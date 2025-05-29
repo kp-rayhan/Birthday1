@@ -48,7 +48,14 @@ function showBirthdayAnimation() {
   }, 5000);
 }
 
+function logUserChoice(choice) {
+  const device = navigator.userAgent;
+  console.log(`User clicked "${choice}" on device: ${device}`);
+}
+
 function showProposal() {
+
+
   // Remove hidden and restart animation for proposal
   proposal.classList.remove('hidden');
   proposal.style.animation = 'none';
@@ -56,23 +63,33 @@ function showProposal() {
   proposal.style.animation = '';
 
   // Button event listeners (once)
-   document.getElementById('yesBtn').onclick = function() {
-    if (typeof gtag === "function") {
-      gtag('event', 'click', {'event_category': 'Button', 'event_label': 'Yes'});
-    }
-    document.getElementById('proposal').classList.add('hidden');
-    document.getElementById('response').innerHTML = "<h2>🥰 You just made me the happiest person alive. Thank you for saying yes—not just to me, but to everything that’s ahead. I always try to hold your heart with care, to walk beside you in every season, and to make this journey full of love, laughter, and meaning.It’s me, Rayhan, who is waiting for your message...</h2>";
-    document.getElementById('response').classList.remove('hidden');
-  };
+    document.getElementById('yesBtn').onclick = function() {
+      if (typeof gtag === "function") {
+        gtag('event', 'proposal_response', {
+          'event_category': 'Button',
+          'event_label': 'Yes',
+          'device_info': navigator.userAgent
+        });
+      }
+      logUserChoice('Yes');
+      document.getElementById('proposal').classList.add('hidden');
+      document.getElementById('response').innerHTML = "<h2>🥰 You just made me the happiest person alive. Thank you for saying yes—not just to me, but to everything that’s ahead. I always try to hold your heart with care, to walk beside you in every season, and to make this journey full of love, laughter, and meaning.It’s me, Rayhan, who is waiting for your message...</h2>";
+      document.getElementById('response').classList.remove('hidden');
+    };
 
- document.getElementById('noBtn').onclick = function() {
-    if (typeof gtag === "function") {
-      gtag('event', 'click', {'event_category': 'Button', 'event_label': 'No'});
-    }
-    document.getElementById('proposal').classList.add('hidden');
-    document.getElementById('response').innerHTML = "<h2>💔 It's okay... just remember: the strongest hearts still care in silence. It’s me, Rayhan, a whisper in the wind you’ll never quite forget.Though our stars may not align this time,I’ll carry your light gently in my heart,A silent melody that never fades...</h2>";
-    document.getElementById('response').classList.remove('hidden');
-  };
+    document.getElementById('noBtn').onclick = function() {
+      if (typeof gtag === "function") {
+        gtag('event', 'proposal_response', {
+          'event_category': 'Button',
+          'event_label': 'No',
+          'device_info': navigator.userAgent
+        });
+      }
+      logUserChoice('No');
+      document.getElementById('proposal').classList.add('hidden');
+      document.getElementById('response').innerHTML = "<h2>💔 It's okay... just remember: the strongest hearts still care in silence. It’s me, Rayhan, a whisper in the wind you’ll never quite forget.Though our stars may not align this time,I’ll carry your light gently in my heart,A silent melody that never fades...</h2>";
+      document.getElementById('response').classList.remove('hidden');
+    };
 }
 
 window.onload = function() {
