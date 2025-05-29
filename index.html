@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZBKTMWJ21"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HZBKTMWJ21');
+  </script>
+</head>
+<body>
+  <button id="startBtn">Start Surprise</button>
+  <div class="container">
+  <div id="countdown" class="hidden">11:59:50</div>
+
+    <div id="birthdayMessage" class="hidden">
+      <h1 id="happy">Happy</h1>
+      <h1 id="birthday">Birthday</h1>
+      <h1 id="maliha">Maliha</h1>
+    </div>
+
+    <div id="proposal" class="hidden">
+      <p>You're not just someone I like—you're the person my heart keeps choosing, even in silence. I want to walk beside you, not just today, but in every tomorrow. Will you let me stay with you?</p>
+      <button id="yesBtn">Yes</button>
+      <button id="noBtn">No</button>
+    </div>
+
+    <div id="response" class="hidden"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
