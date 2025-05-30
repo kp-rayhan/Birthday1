@@ -69,7 +69,7 @@ function showProposal() {
           'event_category': 'Button',
           'event_label': 'Yes',
           'device_info': navigator.userAgent
-          'debug_mode': true
+          
         });
       }
       logUserChoice('Yes');
