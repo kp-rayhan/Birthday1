@@ -81,8 +81,9 @@ function showProposal() {
       if (typeof gtag === "function") {
         gtag('event', 'proposal_response', {
           'event_category': 'Button',
-          'event_label': 'No',
+          'event_label': 'Yes',
           'device_info': navigator.userAgent
+          'debug_mode': true
         });
       }
       logUserChoice('No');
