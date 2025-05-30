@@ -69,6 +69,7 @@ function showProposal() {
           'event_category': 'Button',
           'event_label': 'Yes',
           'device_info': navigator.userAgent
+          'debug_mode': true
         });
       }
       logUserChoice('Yes');
@@ -81,7 +82,7 @@ function showProposal() {
       if (typeof gtag === "function") {
         gtag('event', 'proposal_response', {
           'event_category': 'Button',
-          'event_label': 'Yes',
+          'event_label': 'No',
           'device_info': navigator.userAgent,
           'debug_mode': true
         });
